@@ -2,13 +2,14 @@ import { Post } from "./entities/Post";
 import { __prod__ } from "./constants";
 import { MikroORM } from "@mikro-orm/core";
 import path from "path";
+import { User } from "./entities/User";
 
 export default {
     migrations: {
         path: path.join(__dirname, "./migrations"), // path to the folder with migrations
         pattern: /^[\w-]+\d+\.[tj]s$/,
     },
-    entities: [Post], // table 이라고 생각하면 댈듯
+    entities: [Post, User], // table 이라고 생각하면 댈듯
     dbName: "myweb",
     user: "jsyovo",
     type: "postgresql",
